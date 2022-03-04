@@ -3,12 +3,18 @@ import PokemonList from "../PokemonList/PokemonList";
 import './Main.scss';
 
 
-export default function Main() {
+export default function Main({ pokedex, currentPokemon, handlePokemonChange }) {
     return (
         <main className="pokedex">
-            <CurrentPokemon />
+            <CurrentPokemon
+            currentPokemon={currentPokemon}
+            />
             <div className="pokedex__list-container">
-                <PokemonList />
+                <PokemonList 
+                pokedex={pokedex}
+                currentPokemon={currentPokemon}
+                handlePokemonChange={handlePokemonChange}
+                />
             </div>
         </main>
     )
